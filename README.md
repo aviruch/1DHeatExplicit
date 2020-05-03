@@ -26,7 +26,7 @@ Simultaneous equations (at each node)
 ```
  alpha . d <sup>2 </sup>T/dx<sup>2</sup> = dT/dt 
  
-https://github.com/aviruch/1DHeatExplicit/blob/master/1.JPG
+
 
 ![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/1.JPG "Node i")
 
