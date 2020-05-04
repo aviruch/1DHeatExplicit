@@ -2,6 +2,20 @@ import numpy as np
 from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
 
+
+def plot3D():
+   ##### this plots the temperature vs time data as a surface
+   fig1 = plt.figure()
+   ax = fig1.add_subplot(111, projection='3d')
+   foo = ax.plot_surface(X*100, TIME, T)
+   ax.set_xlabel('x (cm)')
+   ax.set_ylabel('time (Seconds)')
+   ax.set_zlabel('temperature (deg C)')
+   ##for i in range(5):
+   ##   plt.plot(T[:,i])
+   plt.show()
+   return 
+
 A = 1 # cross sectional area of wall element in m^2
 rho = 120.0 # density of wall material in kg / m^3
 k = 0.38 # thermal conductivity of wall material in W / (m*C)
@@ -36,9 +50,6 @@ X, TIME = np.meshgrid(x, timesamps, indexing='ij')
 print ("X",X)
 
 print ("Time",TIME)
-
-
-
 T = np.zeros((X.shape))
 
 print ("T",T)
@@ -67,15 +78,30 @@ for j in range(len(timesamps)-1):
    print ("Intermidiate T\n",T)   
 
 print ("Final T\n",T)
-### this plots the temperature vs time data as a surface
-fig1 = plt.figure()
-ax = fig1.add_subplot(111, projection='3d')
-foo = ax.plot_surface(X*100, TIME, T)
-ax.set_xlabel('x (cm)')
-ax.set_ylabel('time (Seconds)')
-ax.set_zlabel('temperature (deg C)')
-##for i in range(5):
-##   plt.plot(T[:,i])
-plt.show()
 
+
+
+
+masterlist = []
+for i in range(10):
+   masterlist.append(T[:,i])
+
+
+print ("masterlist",masterlist)
+##
+###plt.figure(figsize=(6.0, 4.0))
+
+##
+i=-1
+for impacts in masterlist:
+    i=i+1
+    plt.plot(impacts,label="{} x {} sec".format(i,dt))
+    plt.legend()
+
+#pyplot.xlim(0.0, L)
+#pyplot.ylim(0.0, 100.0);
+plt.xlabel('Node')
+plt.ylabel('Temperature [C]')
+plt.grid()
+plt.show()
 
