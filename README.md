@@ -9,15 +9,27 @@ Assume an average constant radiation of 600 W/m<sup>2</sup>; outdoor and indoor 
 
 ```python
 A = 1 # cross sectional area of wall element in m^2
-L = 0.15  # With of the wall in meter
-nx = 6  # number of locations on the wall nodes
-dx = L / (nx - 1)  # distance between two consecutive locations
-k = 0.30 # thermal conductivity of wall material in W / (m*C)
-ro = 120 # Density of material
-cp = 70 # specific heat capacity in J / (kg*C)
-alpha = k/(ro*cp)  #  thermal diffusivity 
-q_left = 600 # W/sqm
-h = 15 # convective heat transfer coefficient in W / (m^2 * C)
+rho = 120.0 # density of wall material in kg / m^3
+k = 0.038 # thermal conductivity of wall material in W / (m*C)
+c = 700.0 # specific heat capacity in J / (kg*C)
+h = 20.0 # convective heat transfer coefficient in W / (m^2 * C)
+T_initial = 23.0 # initial temperature in deg c
+T_room = 12.0 # ambient temperature in deg c
+T_out_amb = 27.0 # ambient temperature in deg c
+L = 0.15 # thickness of the entire wall in meters
+Q_dot_in = 650.0 # Solar Radiation in watts/sqm
+N = 5 # number of discrete wall segments
+total_time = 3600.0 # total duration of simulation in seconds
+nsteps = 100 # number of timesteps
+```
+
+
+```python
+dx = L/N # length of each wall segment in meters(baby step in space)
+dt = total_time/nsteps # duration of timestep in seconds (baby step in time)
+alpha = k/(rho*c) # Thermal diffusivity
+simfac =  alpha * dt /(dx*dx)         #(k*dt) / (c*rho*dx*dx) Fourier number 
+heatfac = dx / (k*A) # heat fraction
 ```
 
 Simultaneous equations (at each node)
