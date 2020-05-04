@@ -52,3 +52,5 @@ for j in range(len(timesamps)-1):
 
 ```
 
+## Output 
+![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/Figure_1.png "Node i")
