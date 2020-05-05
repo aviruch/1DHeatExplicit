@@ -17,7 +17,7 @@ T_initial = 23.0 # initial temperature in deg c
 T_room = 12.0 # ambient temperature in deg c
 T_out_amb = 27.0 # ambient temperature in deg c
 L = 0.15 # thickness of the entire wall in meters
-Q_dot_in = 650.0 # Solar Radiation in watts/sqm
+Q_dot = 650.0 # Solar Radiation in watts/sqm
 N = 5 # number of discrete wall segments
 total_time = 3600.0 # total duration of simulation in seconds
 nsteps = 100 # number of timesteps
@@ -28,7 +28,7 @@ nsteps = 100 # number of timesteps
 dx = L/N # length of each wall segment in meters(baby step in space)
 dt = total_time/nsteps # duration of timestep in seconds (baby step in time)
 alpha = k/(rho*c) # Thermal diffusivity
-simfac =  alpha * dt /(dx*dx)         #(k*dt) / (c*rho*dx*dx) Fourier number 
+fou =  alpha * dt /(dx*dx)         #(k*dt) / (c*rho*dx*dx) Fourier number 
 heatfac = dx / (k*A) # heat fraction
 ```
 
@@ -59,16 +59,20 @@ Simultaneous equations (at each node)
 ```python
 for j in range(len(timesamps)-1):
 #for j in range(5):
-   T_out = T[0, j]   
-   T[0, j+1] = T[0,j] + simfac * (T[1,j] - T[0,j] + heatfac * Q_dot_in- heatfac * h * A * (T_out - T_out_amb))
-   #T[0, j+1] = 35  # if fixed boundary temperature
-   T_in = T[len(x)-1, j]   
-   T[len(x)-1, j+1] = T_in + simfac * (T[len(x)-2, j] - T_in - heatfac * h * A * (T_in - T_room))
-   #T[len(x)-1, j+1] = 12 # if fixed boundary temperature
-   
+   T_out = T[0, j]
+   #Node 0
+   T[0, j+1] = T[0,j] + fou* (T[1,j] - T[0,j] + heatfac * Q_dot- heatfac*h*A*(T_out - T_out_amb))
+   #T[0, j+1] = 27 # if fixed boundary condition
+   #  (last Node)
+   T_in = T[len(x)-1, j]
+   T[len(x)-1, j+1] = T_in + fou * (T[len(x)-2, j] - T_in) - fou*heatfac*h*A*(T_in - T_room))
+   #T[len(x)-1, j+1] = 12 # if fixed boundary condition
+   #interior elements 
    for i in range(len(x)-2):
-      T[i+1,j+1] = T[i+1,j] + simfac * (T[i,j] - 2*T[i+1,j] + T[i+2,j])
+      T[i+1,j+1] = T[i+1,j] + fou * (T[i,j] - 2*T[i+1,j] + T[i+2,j])
    print ("Intermidiate T\n",T)   
+
+print ("Final T\n",T)  
 
 ```
 
