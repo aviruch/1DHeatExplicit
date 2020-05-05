@@ -52,10 +52,10 @@ Simultaneous equations (at each node)
  
  ## Node 0 
  
-![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/Node 0.JPG "Node i")
+![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/Node0.JPG "Node i")
 
 ## Last Node
-![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/Last Node.JPG "Node i")
+![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/LastNode.JPG "Node i")
 ```python
 for j in range(len(timesamps)-1):
 #for j in range(5):
