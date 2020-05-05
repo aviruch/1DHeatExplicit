@@ -50,7 +50,7 @@ Simultaneous equations (at each node)
 
 ![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/fou.JPG "Node i")
 
- ![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/nodes.JPG "Node i")
+ ![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/nodesnewnew.JPG "Node i")
  
  ## Node 0 
  
