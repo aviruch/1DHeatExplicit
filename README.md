@@ -77,6 +77,7 @@ for j in range(len(timesamps)-1):
 print ("Final T\n",T)  
 
 ```
-
-## Output 
+## Output k =0.038 W/m-K 
+![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/Figure_1_k0_038.png "Node i")
+## Output k = 0.38 W/m-K
 ![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/Figure_1.png "Node i")
