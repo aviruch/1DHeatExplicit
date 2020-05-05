@@ -44,10 +44,9 @@ Simultaneous equations (at each node)
 ![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/img/2.JPG "Node i")
 
 ## Internal nodes 
-<<<<<<< HEAD
+
 ![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/img/3.JPG "Node i")
 
-=======
 ![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/img/internalnodeeq.JPG "Node i")
 
  <br />where <br />
@@ -57,7 +56,6 @@ Simultaneous equations (at each node)
  ![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/img/nodesnewnew.JPG "Node i")
  
  ## Node 0 
->>>>>>> 9d7e1548e78c70c7d20eb364ca698c440dc28b99
  
 ![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/img/Node0.JPG "Node i")
 
