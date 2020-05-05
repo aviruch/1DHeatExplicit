@@ -5,7 +5,7 @@ The wall of a cold room is exposed to solar radiation over a period of time. The
 
 Assume an average constant radiation of 650 W/m<sup>2</sup>; outdoor and indoor air temperature maintained at 27˚C and 12˚C, respectively; average heat transfer coefficient to be 15 W/m<sup>2</sup>-K; formulate the transient heat transfer problem in terms of difference equations with appropriate boundary condition. 
 
-![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/problem1.JPG "Node i")
+![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/img/problem1.JPG "Node i")
 
 ```python
 A = 1 # cross sectional area of wall element in m^2
