@@ -39,30 +39,30 @@ Simultaneous equations (at each node)
  
 
 
-![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/1.JPG "Node i")
+![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/img/1.JPG "Node i")
 
-![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/2.JPG "Node i")
+![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/img/2.JPG "Node i")
 
 ## Internal nodes 
 <<<<<<< HEAD
-![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/3.JPG "Node i")
+![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/img/3.JPG "Node i")
 
 =======
-![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/internalnodeeq.JPG "Node i")
+![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/img/internalnodeeq.JPG "Node i")
 
  <br />where <br />
 
-![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/fou.JPG "Node i")
+![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/img/fou.JPG "Node i")
 
- ![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/nodesnewnew.JPG "Node i")
+ ![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/img/nodesnewnew.JPG "Node i")
  
  ## Node 0 
 >>>>>>> 9d7e1548e78c70c7d20eb364ca698c440dc28b99
  
-![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/Node0.JPG "Node i")
+![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/img/Node0.JPG "Node i")
 
 ## Last Node
-![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/LastNode.JPG "Node i")
+![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/img/LastNode.JPG "Node i")
 ```python
 for j in range(len(timesamps)-1):
 #for j in range(5):
@@ -83,6 +83,6 @@ print ("Final T\n",T)
 
 ```
 ## Output k =0.038 W/m-K 
-![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/Figure_1_k0_038.png "Node i")
+![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/img/Figure_1_k0_038.png "Node i")
 ## Output k = 0.38 W/m-K
-![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/Figure_1.png "Node i")
+![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/img/Figure_1.png "Node i")
