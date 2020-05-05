@@ -45,7 +45,9 @@ Simultaneous equations (at each node)
 
 ## Internal nodes 
 ![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/internalnodeeq.JPG "Node i")
-where
+
+ <br />where <br />
+
 ![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/fou.JPG "Node i")
 
  ![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/nodes.JPG "Node i")
