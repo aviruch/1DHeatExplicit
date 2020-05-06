@@ -75,7 +75,25 @@ for j in range(len(timesamps)-1):
    #interior elements 
    for i in range(len(x)-2):
       T[i+1,j+1] = T[i+1,j] + fou * (T[i,j] - 2*T[i+1,j] + T[i+2,j])
-   print ("Intermidiate T\n",T)   
+   print ("Intermidifor j in range(len(timesamps)-1):
+#for j in range(5):
+    T_out = T[j, 0]
+    #Node 0
+    T[j+1,0] = T[j,0] + fou* (T[j,1] - T[j,0] + heatfac * Q_dot- heatfac*h*A*(T_out - T_out_amb))
+    #T[0, j+1] = 27 # if fixed boundary condition
+    #  (last Node)
+    T_in = T[j,len(x)-1] # 5 nodes then 0,1,2,3,4,len(x)=5, - 1
+    T[j+1,len(x)-1] = T_in + fou * (T[j,len(x)-2] - T_in) - fou*heatfac*h*A*(T_in - T_room)
+    #T[len(x)-1, j+1] = 12 # if fixed boundary condition
+    #interior elements 
+    for i in range(1,len(x)-1):
+        print(i)
+        T[j+1,i] = T[j,i] + fou * (T[j,i-1] - 2*T[j,i] + T[j,i+1])
+    print ("Intermidiate T\n",T)   
+
+
+p = np.around(T, decimals=1)
+print ("Final T\n",p)ate T\n",T)   
 
 print ("Final T\n",T)  
 
