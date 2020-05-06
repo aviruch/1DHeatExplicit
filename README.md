@@ -63,20 +63,6 @@ Simultaneous equations (at each node)
 ![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/img/LastNode.JPG "Node i")
 ```python
 for j in range(len(timesamps)-1):
-#for j in range(5):
-   T_out = T[0, j]
-   #Node 0
-   T[0, j+1] = T[0,j] + fou* (T[1,j] - T[0,j] + heatfac * Q_dot- heatfac*h*A*(T_out - T_out_amb))
-   #T[0, j+1] = 27 # if fixed boundary condition
-   #  (last Node)
-   T_in = T[len(x)-1, j]
-   T[len(x)-1, j+1] = T_in + fou * (T[len(x)-2, j] - T_in) - fou*heatfac*h*A*(T_in - T_room))
-   #T[len(x)-1, j+1] = 12 # if fixed boundary condition
-   #interior elements 
-   for i in range(len(x)-2):
-      T[i+1,j+1] = T[i+1,j] + fou * (T[i,j] - 2*T[i+1,j] + T[i+2,j])
-   print ("Intermidifor j in range(len(timesamps)-1):
-#for j in range(5):
     T_out = T[j, 0]
     #Node 0
     T[j+1,0] = T[j,0] + fou* (T[j,1] - T[j,0] + heatfac * Q_dot- heatfac*h*A*(T_out - T_out_amb))
@@ -86,17 +72,10 @@ for j in range(len(timesamps)-1):
     T[j+1,len(x)-1] = T_in + fou * (T[j,len(x)-2] - T_in) - fou*heatfac*h*A*(T_in - T_room)
     #T[len(x)-1, j+1] = 12 # if fixed boundary condition
     #interior elements 
-    for i in range(1,len(x)-1):
-        print(i)
+    for i in range(1,len(x)-1):        
         T[j+1,i] = T[j,i] + fou * (T[j,i-1] - 2*T[j,i] + T[j,i+1])
-    print ("Intermidiate T\n",T)   
-
-
-p = np.around(T, decimals=1)
-print ("Final T\n",p)ate T\n",T)   
-
-print ("Final T\n",T)  
-
+      
+print ("Final T\n",p)
 ```
 ## Output k =0.038 W/m-K 
 ![alt text](https://github.com/aviruch/1DHeatExplicit/blob/master/img/Figure_1_k0_038.png "Node i")
