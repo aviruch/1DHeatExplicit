@@ -12,8 +12,8 @@ A = 1 # cross sectional area of wall element in m^2
 rho = 120.0 # density of wall material in kg / m^3
 k = 0.038 # thermal conductivity of wall material in W / (m*C)
 c = 700.0 # specific heat capacity in J / (kg*C)
-h = 20.0 # convective heat transfer coefficient in W / (m^2 * C)
-T_initial = 23.0 # initial temperature in deg c
+h = 15.0 # convective heat transfer coefficient in W / (m^2 * C)
+T_initial = 20.0 # initial temperature in deg c
 T_room = 12.0 # ambient temperature in deg c
 T_out_amb = 27.0 # ambient temperature in deg c
 L = 0.15 # thickness of the entire wall in meters
@@ -69,7 +69,7 @@ for j in range(len(timesamps)-1):
     #T[0, j+1] = 27 # if fixed boundary condition
     #  (last Node)
     T_in = T[j,len(x)-1] # 5 nodes then 0,1,2,3,4,len(x)=5, - 1
-    T[j+1,len(x)-1] = T_in + fou * (T[j,len(x)-2] - T_in) - fou*heatfac*h*A*(T_in - T_room)
+    T[j+1,len(x)-1] = T_in + fou * (T[j,len(x)-1] - T_in) - fou*heatfac*h*A*(T_in - T_room)
     #T[len(x)-1, j+1] = 12 # if fixed boundary condition
     #interior elements 
     for i in range(1,len(x)-1):        
